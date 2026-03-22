@@ -1,11 +1,18 @@
 {
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "claude-beats",
+  "description": "Adaptive music engine for Claude Code — generates beats that match your coding mood in real-time",
+  "owner": {
+    "name": "gaviera",
+    "email": "gaviera@users.noreply.github.com"
+  },
   "plugins": [
     {
       "name": "claude-beats",
       "description": "Adaptive music engine for Claude Code — generates beats that match your coding mood in real-time",
-      "version": "1.0.0",
-      "source": "."
+      "source": "./",
+      "category": "productivity",
+      "homepage": "https://github.com/gaviera/claude-beats"
     }
   ]
 }
