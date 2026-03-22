@@ -2,3 +2,4 @@ node_modules/
 /tmp/
 *.log
 .claude/settings.local.json
+MUSIC_THEORY_RESEARCH.md
