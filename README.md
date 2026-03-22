@@ -7,7 +7,11 @@ The engine runs in the background while you code. It analyzes the conversation t
 ## Install
 
 ```bash
-claude plugin install github:gaviera/claude-beats
+# Add the marketplace
+/plugin marketplace add gaviera/claude-beats
+
+# Install the plugin
+/plugin install claude-beats@claude-beats
 ```
 
 Then install dependencies inside the plugin directory:
@@ -15,6 +19,14 @@ Then install dependencies inside the plugin directory:
 ```bash
 cd ~/.claude/plugins/claude-beats  # or wherever the plugin is installed
 npm install
+```
+
+### Local development
+
+To test without installing:
+
+```bash
+claude --plugin-dir /path/to/claude-beats
 ```
 
 ## How it works
