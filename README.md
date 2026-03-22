@@ -14,12 +14,7 @@ The engine runs in the background while you code. It analyzes the conversation t
 /plugin install claude-beats@claude-beats
 ```
 
-Then install dependencies inside the plugin directory:
-
-```bash
-cd ~/.claude/plugins/claude-beats  # or wherever the plugin is installed
-npm install
-```
+Dependencies install automatically on first session start.
 
 ### Local development
 

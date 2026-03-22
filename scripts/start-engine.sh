@@ -14,8 +14,12 @@ if [ -f "$PIDFILE" ] && kill -0 "$(cat "$PIDFILE")" 2>/dev/null; then
 fi
 
 # Ensure dependencies are installed
-if [ ! -d "$PLUGIN_DIR/node_modules" ]; then
-  cd "$PLUGIN_DIR" && npm install --silent 2>/dev/null
+if [ ! -d "$PLUGIN_DIR/node_modules" ] || [ ! -d "$PLUGIN_DIR/node_modules/node-web-audio-api" ]; then
+  cd "$PLUGIN_DIR"
+  if ! npm install --silent 2>/tmp/claude-beats-install.log; then
+    echo "⚠️ Failed to install dependencies. Check /tmp/claude-beats-install.log"
+    exit 0
+  fi
 fi
 
 # Initialize mood.json if missing
