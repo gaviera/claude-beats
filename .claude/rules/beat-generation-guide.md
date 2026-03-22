@@ -5,20 +5,22 @@ globs: beat.ts, mood.json
 
 # Beat Generation Guide
 
-## Architecture: Persistent JSON-driven Engine
+## Architecture: Persistent Engine with Script Interface
 
-The beat engine (`beat.ts`) runs **permanently in the background**. To change the beat, **write to `mood.json`** — the engine detects the change and crossfades automatically. NEVER kill and restart the process.
+The beat engine (`beat.ts`) runs **permanently in the background**. To change the beat, use the **`set-mood.sh` script** — the engine detects the change and crossfades automatically. NEVER kill and restart the process. NEVER use the Write tool for mood changes.
 
 ### Two modes: Preset or Custom
 
-**Preset** — use a built-in mood by name:
-```json
-{"preset": "calm-focus"}
+**Preset** — use `set-mood.sh` with a preset name:
+```bash
+./scripts/set-mood.sh calm-focus
 ```
 
-**Custom** — define a full beat via JSON (Claude can compose any beat on-demand):
-```json
-{"name": "My Beat", "bpm": 92, "crossfade": 6, "layers": {...}}
+**Custom** — pipe a beat definition via stdin:
+```bash
+cat <<'EOF' | ./scripts/set-mood.sh --custom
+{"name": "My Beat", "bpm": 92, "layers": {...}}
+EOF
 ```
 
 ### Available presets
