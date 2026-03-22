@@ -1,0 +1,7 @@
+{
+  "name": "claude-beats",
+  "description": "Adaptive music engine for Claude Code — generates beats that match your coding mood in real-time",
+  "version": "1.0.0",
+  "author": { "name": "gabo" },
+  "license": "MIT"
+}
